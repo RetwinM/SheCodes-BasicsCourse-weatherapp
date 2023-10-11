@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <style>
+      .weatherinfo {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li:hover {
+        background: #fffbef;
+      }
+
+      li {
+        list-style: none;
+        padding: 10px 0;
+        margin: 0 auto;
+        border-radius: 10px;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      p {
+        font-size: 18px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: monospace;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+
+      h1 {
+        color: #1a64d6;
+        font-size: 34px;
+        line-height: 48px;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 48px;
+      }
+
+      button:hover {
+        color: #1a64d6;
+        background: #fff;
+        transition: all 200ms ease;
+        cursor: pointer;
+      }
+
+      button {
+        appearance: auto;
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #1a64d6;
+        background: #1a64d6;
+        color: #fff;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 16px 24px;
+        transition: all 200ms ease-in-out;
+        border-radius: 30px;
+        box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="weatherinfo">
+      <h1>
+        🌤
+        <br />
+        Currently 21° in Tokyo
+      </h1>
+      <h2>
+        13° /
+        <strong>23°</strong>
+      </h2>
+      <ul>
+        <li class="Tomorrow">
+          <h3>🌧Tomorrow</h3>
+          <p>
+            10° /
+            <strong>22°</strong>
+          </p>
+        </li>
+        <li class="Saturday">
+          <h3>🌥 Saturday</h3>
+          <p>
+            15° /
+            <strong>17°</strong>
+          </p>
+        </li>
+        <li class="Sunday">
+          <h3>☀️ Sunday</h3>
+          <p>
+            25° /
+            <strong>28°</strong>
+          </p>
+        </li>
+      </ul>
+      <button>Change city</button>
+      <p>Coded by Michelle Winter</p>
+    </div>
+    <script>
+      function WeatherInfo() {
+        let homeTown = prompt("What city do you live in?");
+        let Degrees = prompt("What temperature is it?");
+        if (Degrees >= 0) {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML =
+            " 😄 </br>" + "Currently" + " " + Degrees + " in " + homeTown;
+        } else {
+          let h1 = document.querySelector("h1");
+          h1.innerHTML =
+            "☹️ </br>" + "Currently" + " " + Degrees + " in " + homeTown;
+        }
+      }
+
+      let contactButton = document.querySelector("button");
+
+      contactButton.addEventListener("click", WeatherInfo);
+    </script>
+  </body>
+</html>
